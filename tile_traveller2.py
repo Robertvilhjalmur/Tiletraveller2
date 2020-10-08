@@ -42,28 +42,16 @@ def find_directions(col, row ):
     if col == 1 and row == 1:   # (1,1)
         valid_directions = NORTH
     elif col == 1 and row == 2: # (1,2)
-        # if onetwo_count:
-        #     coins_amount = coins(coins_amount)
-        #     onetwo_count = False
         valid_directions = NORTH+EAST+SOUTH
     elif col == 1 and row == 3: # (1,3)
         valid_directions = EAST+SOUTH
     elif col == 2 and row == 1: # (2,1)
         valid_directions = NORTH
     elif col == 2 and row == 2: # (2,2)
-        # if twotwo_count:
-        #     coins_amount = coins(coins_amount)
-        #     twotwo_count = False
         valid_directions = SOUTH+WEST
     elif col == 2 and row == 3: # (2,3)
-        # if twothree_count:
-        #     coins_amount = coins(coins_amount)
-        #     twothree_count = False
         valid_directions = EAST+WEST
     elif col == 3 and row == 2: # (3,2)
-        # if threetwo_count:
-        #     coins_amount = coins(coins_amount)
-        #     threetwo_count = False
         valid_directions = NORTH+SOUTH
     elif col == 3 and row == 3: # (3,3)
         valid_directions = SOUTH+WEST
@@ -109,10 +97,6 @@ victory = False
 row = 1
 col = 1
 coins_amount = 0
-# onetwo_count = True
-# twotwo_count = True
-# twothree_count = True
-# threetwo_count = True
 
 while not victory:
     valid_directions = find_directions(col, row)
