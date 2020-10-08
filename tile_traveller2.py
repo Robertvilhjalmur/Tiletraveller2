@@ -87,22 +87,36 @@ def play_one_move(col, row, valid_directions,coins_amount):
         victory = is_victory(col, row)
     return victory, col, row, coins_amount
 
+def play():
+    victory = False
+    row = 1
+    col = 1
+    coins_amount = 0
+
+    while not victory:
+        valid_directions = find_directions(col, row)
+        print_directions(valid_directions)
+        victory, col, row,coins_amount = play_one_move(col, row, valid_directions,coins_amount)
+    print("Victory! Total coins {}.".format(coins_amount))
 
 
-
+choice = 'y'
+while choice == ('y' or 'Y'):
+    play()
+    choice = input('Play again (y/n):')
 
 
 # The main program starts here
-victory = False
-row = 1
-col = 1
-coins_amount = 0
+# victory = False
+# row = 1
+# col = 1
+# coins_amount = 0
 
 
-while not victory:
-    valid_directions = find_directions(col, row)
-    print_directions(valid_directions)
-    victory, col, row,coins_amount = play_one_move(col, row, valid_directions,coins_amount)
-print("Victory! Total coins {}.".format(coins_amount))
+# while not victory:
+#     valid_directions = find_directions(col, row)
+#     print_directions(valid_directions)
+#     victory, col, row,coins_amount = play_one_move(col, row, valid_directions,coins_amount)
+# print("Victory! Total coins {}.".format(coins_amount))
 
 
