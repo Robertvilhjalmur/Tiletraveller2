@@ -79,16 +79,14 @@ def coins(coins_amount,col,row):
             coins_amount = coins_amount + 1
             print('You received 1 coin, your total is now {}.'.format(coins_amount))
         elif pull_lever.lower() == 'n':
-            
+            pass
+        
+    return coins_amount
 
-
-
-
-
-
+     
 def play_one_move(col, row, valid_directions,coins_amount):
     ''' Plays one move of the game
-    Return if victory has been obtained and updated col,row '''
+        Return if victory has been obtained and updated col,row '''
     victory = False
     direction = input("Direction: ")
     direction = direction.lower()
@@ -96,10 +94,14 @@ def play_one_move(col, row, valid_directions,coins_amount):
     if not direction in valid_directions:
         print("Not a valid direction!")
     else:
-        coins(coins_amount,col,row)
         col, row = move(direction, col, row)
+        coins_amount = coins(coins_amount,col,row)
         victory = is_victory(col, row)
     return victory, col, row, coins_amount
+
+
+
+
 
 
 # The main program starts here
